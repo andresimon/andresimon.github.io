@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!-- Hey what are you looking for? ;)
+Copyright 2019 by Andre Simon -->
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="programming, portfolio, game, development, game development, andre simon, c++, c#, gamedev, unity, linkedin" />
+    <meta name="description" content="Game programming, development &amp; design portfolio of Andre Simon." />
+    <meta name="author" content="Andre Simon">
+
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="robots" content="index,nofollow"> 
+    <meta name="revisit-after" content="15 days" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Andre Simon - Game Programmer Portfolio</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+    <!-- Brand Buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/w3.css">
+
+    <link rel="stylesheet" href="css/BrandButtons.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/main.js"></script>
+
+    <script>
+      window.addEventListener("load", function () 
+      {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+    
+        window.scroll(0,0);
+
+        const _anim_right = document.querySelectorAll(".anim-right");
+
+        for (var i = 0; i < _anim_right.length; i++) 
+        {
+          _anim_right[i].className += " w3-animate-right";
+        }    
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+      
+    <div class="loader">
+      <img src="images/Pacman-0.7s-200px.gif" alt="Loading..." />
+    </div>
+
+    <!-- Overlay effect when opening the side navigation on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+    <nav class="w3-sidebar w3-bar-block color-theme-03 w3-collapse w3-animate-left" style="z-index:5; width:275px;" id="mySidebar">
+     
+      <a href="javascript:void(0)" onclick="CloseMenu()" title="Close Menu" id="menu-close"
+        class="w3-button w3-hide-large w3-xlarge w3-hover-red w3-display-topright"><i class="fa fa-remove"></i>
+      </a>
+
+      <div class="" style="margin-top:16%; text-align: center;">
+        <img src="images/myPhoto003.jpg" class= "w3-circle" style="width:57%; display:inline-block;">
+      </div>
+
+      <div class="w3-container w3-center" style="padding: 23px 0;">
+        <span class="_h3" style="display: inline-block;">Andre Simon</span>
+        <span class="_h4 w3-wide" style="display: inline-block; color:rgb(17, 136, 228);">Game Programmer</span>
+      </div>   
+  
+      <div class="menu">
+        <div><a href="#_home"     onclick='CanCloseMenu()'  class="menu-item current">Home    <span class="menu-item-underline"></span></a></div> 
+        <div><a href="#_about"    onclick='CanCloseMenu()'  class="menu-item ">       About   <span class=""></span>  </a></div> 
+        <div><a href="#_projects" onclick='CanCloseMenu()'  class="menu-item">        Projects<span class=""></span></a></div> 
+        <div><a href="#_contact"  onclick='CanCloseMenu()'  class="menu-item">        Contact <span class=""></span></a></div> 
+      </div>
+
+    </nav>
+
+    <!-- Project Details -->
+    <div id="proj-details" class="w3-hide w3-animate-right proj-details-default" >
+      <div>
+        <span onclick='CloseProj()' class="w3-button w3-xlarge w3-hover-red w3-display-topright" 
+          style="z-index: 11; color: white;" title="Close Details"><i class="fa fa-remove"></i>
+        </span>
+      </div>
+      <div id="proj-details-content"></div>
+    </div>
+  
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main color-theme-00" style="margin-left:275px;" id="content"> 
+
+      <i id="menu-mobile-btn" class="fa fa-bars w3-hide-large w3-xlarge" onclick="OpenMenu()"></i>
+
+      <!-- Video -->
+      <div class="w3-black" id="_home" >
+        <div id="hero">
+          <video autoplay loop muted poster="images/FillImage.jpg" id="theVideo">
+            <source src="videos/Portfolio2.mp4" type="video/mp4">
+          </video> 
+
+          <div style="height:100%; width:100%; background-color: rgba(27, 3, 116, 0.15); position: absolute; top: 0; "></div>
+     
+        </div>
+      </div>
+      
+      <!-- About Me -->
+      <div class="color-theme-02" style="width:100%;" id="_about">
+
+        <div class="w3-content" style="max-width:930;">
+   
+          <div class="w3-container w3-center anim-right">
+    
+            <!-- <span class="w3-jumbo" style="margin: 0 0;">About Me</span> -->
+            <span class="title-big">About Me</span>
+  
+            <p class="text w3-justify">
+              Hello, my name is Andre Simon, a game developer from Brazil. 
+              With a Bachelor degree in Computer Science and years of experience in commercial systems development, 
+              I have recently graduated as a 
+              <a href="https://www.georgebrown.ca/T163-2017-2018/" target="_blank" rel="noreferrer noopener">
+                game programmer at George Brown College</a> (Toronto/CA).
+                Thus, I have an extensive background as a developer/business analyst on commercial projects that I bring to the wonderful game world.
+            </p>
+                 
+            <p class="text w3-justify">
+              I understand that creating a game, demands technique and passion, and I can use both. 
+              I love playing games, but what I love most is making them.
+              Here you can see a sample of the fun things that I have had the pleasure of working on.
+            </p>
+ 
+            <p class="text w3-justify" style="font-weight: bolder;">
+              By the way, I am currently searching for job opportunities and I can relocate on purpose.
+            </p>
+       
+            <p class="text w3-justify w3-hide ReadMore">
+              I am in transition between careers to the games industry where I have always wanted to work. 
+              It is a personal and professional achievement that I am seeking with all strength and perseverance.
+              I am a very dedicated person who remains committed to my continual professional development.
+            </p>    
+
+            <p class="text w3-justify w3-hide ReadMore">
+              For several years, I created the most diverse programs and systems for various types of business, easily adapting myself 
+              to the rules and knowledge required by my work. 
+              Also, I worked with multidisciplinary teams in various compositions and sizes, successfully achieving the project’s goals, 
+              so I know the work team dynamics.
+            </p>
+
+            <span>
+              <button id="btnReadMore" onclick="ReadMoreFunc()" class="text color-theme-02 w3-right">Read More &#187 &#187</button>
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Projects -->
+      <div id="_projects">
+
+        <div class="color-theme-01 proj-bar-sticky w3-center">
+          <span class="title">Projects</span>
+          </br>
+          <span class="text">Click on the tiles to learn more about each project</span>
+        </div>
+
+        <div class="w3-padding-64">
+
+          <!-- 1a Row -->
+          <div class="w3-row">
+
+            <!-- Civil War -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+     
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="CivilWar-proj.html">
+                <img src="images/CiviWar_512.png" alt="Civil War">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">Civil War</p>
+                </div>
+              </div>
+     
+              <div class="proj-tags-container">
+                <span class="w3-tag text w3-round tag-black">Unity</span> 
+                <span class="w3-tag text w3-round tag-blue2">c#</span> 
+                <span class="w3-tag text w3-round tag-grey">patterns</span> 
+                
+              </div>
+            </div>
+          
+            <!-- Pac-Man -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="PacMan-proj.html">
+                <img src="images/PacMan_512.png" alt="Pac Man">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">Pac Man</p>
+                </div>
+              </div>
+
+              <div class="proj-tags-container" >
+                <span class="w3-tag text w3-round tag-black">Unity</span> 
+                <span class="w3-tag text w3-round tag-blue2">c#</span> 
+                <span class="w3-tag text w3-round tag-grey">patterns</span> 
+              </div>
+            </div>
+
+            <!-- Curling -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="Curling-proj.html">
+                <img src="images/Curling_512.png" alt="Curling">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">Curling</p>
+                </div>
+              </div>
+
+              <div class="proj-tags-container" >
+                <span class="w3-tag text w3-round tag-black">Unity</span> 
+                <span class="w3-tag text w3-round tag-blue2">c#</span> 
+              </div>
+            </div>
+
+          </div>
+
+          <div class="w3-container w3-padding-16"></div>
+
+          <!-- 2nd Row -->
+          <div class="w3-row">
+
+            <!-- 15 Puzzle Game -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="15PuzzleGame-proj.html">
+                <img src="images/15Puzzle_512.png" alt="15 Puzzle Game">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">15 Puzzle Game</p>
+                </div>
+              </div>
+              
+              <div class="proj-tags-container" >
+                <span class="w3-tag text w3-round tag-green">Android</span> 
+                <span class="w3-tag text w3-round tag-pink">Java</span> 
+              </div>
+            </div>
+
+            <!-- Hagl-9 -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="Hagl-9-proj.html">
+                <img src="images/Hagl-9_512.png" alt="Hagl-9">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">Hagl-9</p>
+                </div>
+              </div>
+
+              <div class="proj-tags-container" >
+                <span class="w3-tag text w3-round tag-grd2">Google Play</span> 
+                <span class="w3-tag text w3-round tag-green">Android</span> 
+                <span class="w3-tag text w3-round tag-pink">Java</span> 
+              </div>
+            </div>
+
+            <!-- Vault 163 -->
+            <div class="w3-container w3-third w3-center" style="padding-bottom: 20px;">
+
+              <div class="proj-img-container w3-round-large w3-display-container" data-proj="Vault163-proj.html">
+                <img src="images/Vault163/Vault163_512.jpg" alt="Vault163">
+                <div class="w3-black w3-opacity-min w3-bottom" style="position:absolute;">
+                  <p class="proj-img-title">Vault 163</p>
+                </div>
+              </div>
+              
+              <div class="proj-tags-container" >
+                <span class="w3-tag text w3-round tag-orange">Html5</span> 
+                <span class="w3-tag text w3-round tag-blue">CSS</span> 
+                <span class="w3-tag text w3-round tag-yellow">JavaScript</span> 
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+    
+      </div>
+
+      <!-- Contact -->
+      <div class="color-theme-02" style="width:100%;" id="_contact">
+
+        <div class="w3-content" style="max-width:930;">
+     
+          <div class="w3-container w3-center anim-right">
+          
+            <span class="title-big">Contact Me</span>
+          
+            <p class="text w3-justify">
+              Feel free to send me a message here: 
+              <a href="mailto:andresimong@gmail.com" target="_blank">andresimong@gmail.com</a>.  Please don't hesitate to contact me for any enquiries!
+            </p>
+
+            <a href="mailto:andresimong@gmail.com" target="_blank" class="contact-icon">
+              <i class="fa fa-at"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/andre-medeiros/" target="_blank" rel="noreferrer" class="contact-icon">
+              <i class="fa fa-linkedin"></i>
+            </a>
+
+          </div>
+
+        </div>
+  
+      </div>
+       
+      <div id="footer" class="w3-center"> 
+        <span class="text">Copyright © 2019 by Andre Simon</span>
+      </div>
+      
+    </div>
+
+    <script>
+
+      document.getElementById("theVideo").playbackRate = 0.75;
+
+      // Scroll event to set active menu item
+      const mainNavLinks = document.querySelectorAll("a.menu-item");
+
+      window.addEventListener("scroll", event =>
+      {
+        let fromTop = window.scrollY;
+
+        var _bigest = 0;
+        var _bigestLink;
+
+        var windowHeight = window.innerHeight;
+        var _array = Array.from(mainNavLinks);
+        
+        for ( var i = 0; i < _array.length; i++)
+        {
+          const _link = _array[i];
+          const _element = _link.hash;
+
+          var _visible = 0;
+
+          var _top    = document.querySelector(_element).getBoundingClientRect().top;
+          var _bottom = document.querySelector(_element).getBoundingClientRect().bottom;
+          var _height = document.querySelector(_element).getBoundingClientRect().height;
+
+          if ( _top < 0 )
+          {
+            if ( _bottom > 0)
+            {
+              _visible = _bottom;
+            }
+          }
+          else if ( _top >= 0 && _top < windowHeight )
+          {
+            if ( _bottom <= windowHeight )
+            {
+              _visible = _height;
+            }
+            else
+            {
+              _visible = windowHeight - _top;
+            }
+          }
+
+          // Compute % element is visible
+          var _percent = (_visible*100) / _height;
+          // console.log(_element + " percent: " + _percent);
+
+          if ( _percent > _bigest )
+          {
+            _bigestLink = _link;
+            _bigest     = _percent;
+          }
+
+        }
+
+        var _current = document.querySelector(".current");
+        if ( _current != null)
+        {
+          var _underline = document.querySelector(".current > span");
+          _underline.classList.remove("menu-item-underline");
+          _current.classList.remove("current");
+        }
+
+        _bigestLink.classList.add("current");
+        var _underline = document.querySelector(".current > span");
+        _underline.classList.add("menu-item-underline");
+
+      });
+    
+      // Open project details onclick
+      var _parent_proj_details =  document.getElementById('proj-details');
+
+      $(".proj-img-container").click(function (e)
+      {
+        var _page   = $(this).data("proj");
+        var content_div = document.getElementById('proj-details-content');
+
+        $(content_div).load(_page, "#proj-details-content", function()
+        {
+          _parent_proj_details.classList.add("w3-show");
+
+          var _btn = document.getElementById("menu-close");
+   
+          if (window.getComputedStyle(_btn).display != "none")
+          {
+            _parent_proj_details.classList.replace("proj-details-default","proj-details-mobile");
+          }
+
+        });
+      });
+
+      function CloseProj()
+      { 
+        _parent_proj_details.classList.remove("w3-show");  
+
+        if ( _parent_proj_details.classList.contains("proj-details-mobile" ) )
+        {
+          _parent_proj_details.classList.replace("proj-details-mobile", "proj-details-default");
+        }
+      }
+
+    </script>
+
+  </body>
+
+</html>

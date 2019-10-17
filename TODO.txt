@@ -1,0 +1,17 @@
+Civil War github button smaller;
+CSS mini;
+Facebook openGraph & Twitter Card;
+Others technologies at view-source:http://hugo.fyi/#about;
+Pacman accordion transtition;
+Pacman accordion rotate +;
+Pacman github button;
+Curling github button;
+15 Puzzle content;
+Test: IE / Chrome / firefox / Others;
+Test : desktop / tablet / mobile;
+
+
+
+
+
+

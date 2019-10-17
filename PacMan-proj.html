@@ -1,0 +1,173 @@
+    
+<style>
+.accordion
+{
+
+margin: 10px 0;
+
+}
+.accordion-content
+{
+    transition: all 10.2s ease-in-out;
+}
+
+    #tab1 a:link {border-bottom: 1px dotted; text-decoration: none;}
+    #tab1 a:visited, a:active {text-decoration: none;}
+    #tab1 a:hover {text-decoration: underline;  color: yellow; border: none;}
+
+</style>
+
+
+<div id="proj-details-content" class="w3-round-large color-theme-03" style="border: 0.05px solid rgba(207, 202, 202, 0.295);">
+
+    <div class="w3-container w3-center" style="margin-bottom: 10px;">
+        <span class="title-big">Pac Man</span>
+    </div>
+
+    <div id="proj-details-video" class="w3-content">
+        <video autoplay controls loop muted>
+            <source src="videos/PacMan_optimized.mp4" type="video/mp4">
+        </video> 
+    </div>
+
+    <div class="w3-container text" style="margin: 5px 0 10px;">
+        <table class="w3-table w3-bordered">
+            <tr>
+                <th>Project Type</th>
+                <td>Personal / Job application project</td>
+            </tr>
+
+            <tr>
+                <th>Technology</th>
+                <td>Unity</td>
+            </tr>
+    
+            <tr>
+                <th>Primary Role(s)</th>
+                <td>Solo Game Design / coding</td>
+            </tr>
+        </table>
+    </div>
+        
+    <div class="w3-container">
+
+        <p class="text w3-justify">
+            Developing this Pac-Man clone was a very rewarding experience. 
+            This project was a job vacancy screening test, and I only had one week to do as much as I could. 
+        </p>   
+
+         <p class="text w3-justify">
+            As with every project I take part in, my first step is to do an initial analysis (thanks to my years of experience as a business analyst) 
+            on how I should go about achieving the ultimate goal. I look for references and examples, 
+            research how to apply good practices, use patterns, etc. So I dedicated the first day to this activity.
+        </p>
+        
+        <button onclick="myFunction('tab1')" class="w3-button w3-block w3-round color-theme-00 w3-left-align accordion">Main Navigation Mechanics - Map of Nodes</button>
+        <div id="tab1" class="w3-container w3-hide accordion-content">
+
+            <p class="text w3-justify">
+                I found in several examples from other developers the extensive use of colliders for the entire map and the characters, 
+                which did not seem right to me. That approach requires a high resource utilization that compromises the performance. 
+            </p>
+
+            <p class="text w3-justify">
+                So, I found this fantastic article: 
+                <a href="https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php" target="_blank" rel="noreferrer noopener">
+                    The Pac-Man Dossier by Jamey Pittman on Gamasutra 
+                </a> - the best Game Design Document I’ve ever seen. 
+            </p>
+
+            <p class="text w3-justify">
+                From then on, I decided to use a map of nodes, meaning I orient the characters to move from one node to another. 
+                Each path intersection contains a node with an array of valid directions, which allows the characters to go forward in one of them.
+            </p>
+
+        </div>
+            
+        <button onclick="myFunction('tab2')" class="w3-button w3-block w3-round color-theme-00 w3-left-align accordion">Ghost Behavior</button>
+        <div id="tab2" class="w3-container w3-hide accordion">
+
+            <p class="text w3-justify">
+                Ghosts have the original game behaviors: Scatter, Chase, Frightened and Consumed. 
+                The frightened and consumed modes are common to all ghosts, while Scatter and Chase are peculiar to each ghost (Blinky, Clyde, Inky, Pinky).
+            </p>
+
+            <p class="text w3-justify">
+                My architecture was modeled as follow: 
+            </p>
+
+            <p class="text w3-justify">
+                <!-- <span style="line-height:0.6em; margin-right: 10px;">&#8226;</span> -->
+                <span style="line-height:0.6em; margin-right: 10px;">&#10004;</span>
+                A ghost parent class plus a class for each one of the four ghosts, with essentially the routine that chooses the next target-node 
+                (which is the primary difference between ghosts). 
+            </p>
+
+            <p class="text w3-justify">
+                <span style="line-height:0.6em; margin-right: 10px;">&#10004;</span>
+                A state machine that governs the change between the already mentioned behaviors . 
+                Here, I used ScriptableObjects and interfaces, with a manager that exchanges the asset (ScriptableObject data) in each ghost.
+            </p>
+    
+        </div>
+
+        <button onclick="myFunction('tab3')" class="w3-button w3-block w3-round color-theme-00 w3-left-align accordion">Difficulty Level</button>
+        <div id="tab3" class="w3-container w3-hide accordion">
+
+            <p class="text w3-justify">
+                This game has no limit on the level a player can reach, so to better manage the difficulty and to polish the gameplay, 
+                the difficulty has been parametrised with ScriptableObjects assets. So for each level you want to increase the difficulty, 
+                just create a new asset with the modified parameters and name it with the number of the level you want. 
+            </p>
+
+            <p class="text w3-justify">
+                The difficulty controller takes care of switching the difficulty when it finds an asset with the same name as the current level of the game. 
+                If there is no asset for the specific level, the parameters of the last one are preserved, so we don't need an asset for each level, 
+                only for those we want the difficulty to be increased.
+            </p>
+
+        </div>
+     
+        <button onclick="myFunction('tab4')" class="w3-button w3-block w3-round color-theme-00 w3-left-align accordion">Bonus Items</button>
+        <div id="tab4" class="w3-container w3-hide">
+
+            <p class="text w3-justify">
+                To control the bonus items spawning on a level, I followed the same strategy used on the difficulty level management: ScriptableObjects. 
+                In this case, the parameters are the level number, the amount of bonus points and the desired sprite. 
+            </p>
+
+            <p class="text w3-justify">
+                This makes it simple to enable or disable the presence of bonus items at any level by simply 
+                creating or removing ScriptableObject assets from the corresponding manager.
+            </p>
+
+        </div>
+
+        <br>
+
+        <div class="w3-right">
+
+            <div class="brand-button github">
+                <a href="https://github.com/andresimon/PacMan" target="_blank" rel="noreferrer">
+                <i class="fa fa-github"></i>
+                <span>Github</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div> 
+
+</div> 
+
+<script>
+    function myFunction(id) 
+    {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+</script>
